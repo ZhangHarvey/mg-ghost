@@ -1,5 +1,5 @@
 # mg：一个materialize design风格的ghost主题
-=======
+
 ##Intro
 mg在开发过程中，采用compass + sass作为css的开发工具。整个前端样式在[materializecss](http://materializecss.com/)的基础上编写。采用[highlight.js](https://highlightjs.org/)作为代码高亮。
 
