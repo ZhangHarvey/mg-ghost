@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="{{meta_description}}">
+    <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    {{! Import font-awesome css file }}
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    {{! Import materialize.css }}
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{asset "mg/stylesheets/screen.css"}}" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="{{asset "mg/stylesheets/print.css"}}" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="{{asset "mg/stylesheets/ie.css"}}" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link href="{{asset "mg/stylesheets/main.css"}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset "highlightjs/styles/tomorrow.css"}}" rel="stylesheet" type="text/css" />
+
+    {{! Ghost Head }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} no-js">
+    {{> nav}}
+    <main>
+        {{{body}}}
+    </div>
+    {{> footer}}
+    {{> fixed-action-btn}}
+    {{! Ghost Footer }}
+    {{ghost_foot}}
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+    <script type="text/javascript">  
+      if (typeof jQuery == 'undefined') {
+        document.write('<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></'+'script>');
+      }
+    </script>
+    
+    {{! The materialize file }}
+    <script src="{{asset "materialize-src/js/bin/materialize.min.js"}}"></script>
+
+    {{! Highlight.js }}
+    <script type="text/javascript" src="{{asset "highlightjs/highlight.js"}}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function(){
+            $('.parallax').parallax();
+            $(".button-collapse").sideNav();
+            $('.materialboxed').materialbox();
+            $('.mg-post-wrapper p img').addClass('materialboxed');
+        })
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $('.materialboxed').materialbox();
+            $(window).on("scroll", function(){
+                var st = $(document).scrollTop();
+                if(st >= 50) {
+                    $("#mg-scrolltop").fadeIn(300);
+                }else{
+                    $("#mg-scrolltop").fadeOut(300);
+                }
+            })
+            $("#mg-scrolltop").on("click", function(e){
+                $('html,body').animate({scrollTop : 0}, 300); 
+            });
+        });
+    </script>
+</body>
+</html>

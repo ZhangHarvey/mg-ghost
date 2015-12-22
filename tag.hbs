@@ -1,0 +1,17 @@
+{{!< default}}
+  <div id='mg-main-banner-box' class="parallax-container">
+    <div class='container' id='mg-slogan-box'>
+      <h4>{{@blog.title}}</h3>
+      <h5>{{@blog.description}}~</h5>
+    </div>
+    <div class="parallax">
+      <img src="{{#if @blog.cover}}{{@blog.cover}}{{else}}{{asset 'images/banner/banner2.jpg'}}{{/if}}">
+    </div>
+  </div>
+  <div class='container' id='mg-post-list-box'>
+      <div class="section white">
+        <h5 class="header">Tag: <a href="">{{tag.name}}</a></h5>
+      </div>
+      {{> post-list}}
+      {{pagination}}
+  </div>

@@ -1,0 +1,10 @@
+<ul class="pagination right-align">
+	{{#if prev}}
+	<li class="waves-effect"><a href="{{page_url prev}}"><i class="material-icons">chevron_left</i></a></li>
+	{{/if}}
+	<li class="waves-effect blue-grey lighten-5"><a href="javascript:;">{{page}}&nbsp;/&nbsp;{{pages}}</a></li>
+	{{#if next}}
+	<li class="waves-effect"><a href="{{page_url next}}"><i class="material-icons">chevron_right</i></a></li>
+	{{/if}}
+</ul>
+

@@ -1,0 +1,41 @@
+      <div class="row">
+        {{#foreach posts}}
+        {{#if image}}
+          <div class="col s12 m12 mg-post-card">
+            <div class='mg-post-card-tip z-depth-1'>
+                {{date format="DD MMM YYYY"}}
+            </div>
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{image}}">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator cyan-text">{{title}}<i class="material-icons right">more_vert</i></span>
+                <p><a class='mg-a1' href="{{url}}">继续阅读>></a></p>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0px);">
+                <span class="card-title cyan-text">
+                {{title}}
+                </span>
+                <p>{{excerpt characters="250"}}&hellip;</p>
+              </div>
+            </div>
+          </div>
+          {{else}}
+          <div class="col s12 m12 mg-post-card">
+            <div class='mg-post-card-tip z-depth-1'>
+                {{date format="DD MMM YYYY"}}
+            </div>
+            <div class="card white">
+              <div class="card-content">
+                <span class="card-title cyan-text">{{title}}</span>
+                <p>{{excerpt characters="250"}}&hellip;</p>
+              </div>
+              <div class="card-action">
+                <a href="{{url}}">继续阅读>></a>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+        {{/foreach}}
+      </div>

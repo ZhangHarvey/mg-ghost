@@ -1,0 +1,22 @@
+{{!< default}}
+{{#post}}
+  <div id='mg-post-header-banner' style='background-image: url({{#if image}}{{image}}{{else}}{{asset 'images/banner/banner1.jpg'}}{{/if}})'>
+      <div class='overlay'></div>
+      <h4>{{{title}}}</h4>
+      <p id='mg-post-date'>
+        <i class="tiny material-icons">today</i> 
+        {{date format="DD MMM YYYY"}}
+      </p>
+      <div id='mg-post-header-tag-box'>
+        {{tags separator='&nbsp;'}}
+      </div>
+  </div>
+    <div class='container'>
+      <div class='mg-post-category'>{{date format="DD MMM YYYY"}}&#8226; {{tags prefix="于 "}}</div>
+      <div class='mg-post-wrapper'>
+        <section>
+        {{content}}
+        </section>
+      </div>
+    </div>
+{{/post}}
